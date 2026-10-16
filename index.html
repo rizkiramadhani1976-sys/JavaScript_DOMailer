@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOMailer</title>
+  </head>
+  <body>
+    <main>
+      <!-- SIDEBAR KIRI (TIDAK DIUBAH STRUKTUR UTAMANYA) -->
+      <div id="sidebar" class="sidebar grid-1">
+        <h1>DOMailer</h1>
+        <p id="unread">Unread: <span>0</span></p>
+        <hr />
+        <p id="starred">Starred: <span>0</span></p>
+      </div>
+
+      <!-- KANAN: AREA UTAMA -->
+      <div id="main" class="main grid-2">
+        <div id="search" class="search">
+          <input type="text" id="searchInput" placeholder="Search by sender or subject.." />
+          <div class="option" id="option">
+            <button class="style-button filter-btn active" data-filter="all">All</button>
+            <button class="style-button filter-btn" data-filter="unread">Unread</button>
+            <button class="style-button filter-btn" data-filter="starred">Starred</button>
+            <button class="style-button" id="composeBtn">+ Compose</button>
+          </div>
+        </div>
+
+        <div id="select" class="select" style="display: none;">
+          <p class="textP"><span id="textTotal">0</span> item(s) selected</p>
+          <button id="btnRead" class="readStyle button">Mark as Read</button>
+          <button id="btnhapus" class="deleteStyle button">Delete Selected</button>
+        </div>
+
+        <!-- CONTAINER TABEL EMAIL -->
+        <div id="container-show" class="container-show">
+          <table class="email-table" border="2px">
+            <thead>
+              <tr>
+                <th style="width: 40px;"><input type="checkbox" id="selectAll" /></th>
+                <th style="width: 40px; text-align: center;">★</th>
+                <th>Sender</th>
+                <th>Subject & Content</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="email-list">
+              <!-- Render via JavaScript -->
+            </tbody>
+          </table>~
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL COMPOSE EMAIL -->
+    <div id="composeModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <h3>New Message</h3>
+        <form id="composeForm" class="form-plex">
+          <input type="text" id="composeSender" placeholder="Sender Name" required />
+          <input type="text" id="composeSubject" placeholder="Tittle: " required />
+          <textarea id="composeContent" placeholder="Email content..." rows="4" required></textarea>
+          <div class="modal-buttons">
+            <button type="submit" class="readStyle button">Send</button>
+            <button type="button" id="closeModal" class="deleteStyle button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
