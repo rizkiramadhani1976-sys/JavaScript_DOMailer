@@ -356,7 +356,7 @@ function updateBulkActionbar() {
   }
 }
 
-// Event Delegation pada
+// Event Delegation 
 emailListEl.addEventListener("click", (e) => {
   const row = e.target.closest(".email-row");
   if (!row) return;
@@ -461,5 +461,4 @@ composeForm.addEventListener("submit", (e) => {
   renderEmails();
 });
 
-// Inisialisasi Pertama
 renderEmails();
